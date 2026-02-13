@@ -1,79 +1,77 @@
-  <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-        
-        * {
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-        
-        .serif {
-            font-family: 'Noto Serif KR', serif;
-        }
-        
-        .transition-all {
-            transition: all 0.3s ease;
-        }
-        
-        .strength-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 50%, #0f172a 100%);
-        }
-        
-        .navy-accent {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        }
-        
-        .cool-deep {
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-        
-        .winter-text {
-            color: #cbd5e1;
-        }
-        
-        .backdrop-blur-md {
-            backdrop-filter: blur(12px);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .skill-bar {
-            transition: width 2s ease-in-out;
-        }
-        
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .typing-effect {
-            overflow: hidden;
-            border-right: .15em solid #667eea;
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #1e3a8a; }
-        }
-    </style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.serif {
+    font-family: 'Noto Serif KR', serif;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.strength-card:hover {
+    transform: translateY(-5px);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2b60b6 50%, #0f172a 100%);
+}
+
+.navy-accent {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.cool-deep {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+.winter-text {
+    color: #cbd5e1;
+}
+
+.backdrop-blur-md {
+    backdrop-filter: blur(12px);
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.skill-bar {
+    transition: width 2s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: .15em solid #667eea;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #1e3a8a; }
+}
