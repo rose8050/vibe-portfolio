@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인 포트폴리오</title>
+    <title>수의사 포트폴리오</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
         
@@ -13,8 +13,37 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
         
+        .serif {
+            font-family: 'Noto Serif KR', serif;
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-5px);
+        }
+        
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .navy-accent {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .cool-deep {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .winter-text {
+            color: #cbd5e1;
+        }
+        
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
         }
         
         .card-hover {
@@ -53,227 +82,245 @@
         
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: #667eea; }
+            50% { border-color: #1e3a8a; }
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- 네비게이션 -->
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-purple-600">Portfolio</div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 transition">홈</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 transition">소개</a>
-                    <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">기술</a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-purple-600 transition">프로젝트</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 transition">연락처</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden">
-                    <i class="fas fa-bars text-2xl text-gray-700"></i>
-                </button>
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-xl tracking-tight text-blue-800">수의사 포트폴리오</span>
+            <div class="hidden md:flex space-x-4 text-sm font-medium">
+                <a href="#home" class="hover:text-blue-600">홈</a>
+                <a href="#identity" class="hover:text-blue-600">정체성</a>
+                <a href="#clinical" class="hover:text-blue-600">임상</a>
+                <a href="#mindset" class="hover:text-blue-600">마인드셋</a>
+                <a href="#insight" class="hover:text-blue-600">분석</a>
+                <a href="#contact" class="hover:text-blue-600">연락처</a>
             </div>
+            <button id="mobile-menu-btn" class="md:hidden">
+                <i class="fas fa-bars text-2xl text-gray-700"></i>
+            </button>
         </div>
         <!-- 모바일 메뉴 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-6 py-4 space-y-3">
-                <a href="#home" class="block text-gray-700 hover:text-purple-600 transition">홈</a>
-                <a href="#about" class="block text-gray-700 hover:text-purple-600 transition">소개</a>
-                <a href="#skills" class="block text-gray-700 hover:text-purple-600 transition">기술</a>
-                <a href="#projects" class="block text-gray-700 hover:text-purple-600 transition">프로젝트</a>
-                <a href="#contact" class="block text-gray-700 hover:text-purple-600 transition">연락처</a>
+                <a href="#home" class="block text-gray-700 hover:text-blue-600 transition">홈</a>
+                <a href="#identity" class="block text-gray-700 hover:text-blue-600 transition">정체성</a>
+                <a href="#clinical" class="block text-gray-700 hover:text-blue-600 transition">임상</a>
+                <a href="#mindset" class="block text-gray-700 hover:text-blue-600 transition">마인드셋</a>
+                <a href="#insight" class="block text-gray-700 hover:text-blue-600 transition">분석</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600 transition">연락처</a>
             </div>
         </div>
     </nav>
 
     <!-- 메인 섹션 -->
-    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
-        <div class="container mx-auto px-6 text-center fade-in">
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-32">
+        <section id="home" class="scroll-mt-24">
             <div class="mb-8">
-                <div class="w-40 h-40 mx-auto rounded-full bg-white p-2 shadow-2xl">
-                    <div class="w-full h-full rounded-full bg-gray-300 flex items-center justify-center">
-                        <i class="fas fa-user text-6xl text-gray-600"></i>
+                <span class="text-xs font-bold tracking-widest text-blue-600 uppercase border-b-2 border-blue-600 pb-1">Concept 01</span>
+                <h2 class="text-2xl font-bold mt-4">미니멀 & 전문성 (Minimal & Professional)</h2>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-2xl p-12 md:p-20 shadow-sm">
+                <div class="flex flex-col items-center text-center mb-16">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full mb-8 overflow-hidden">
+                        <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                            <i class="fas fa-user-md text-4xl text-gray-600"></i>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">홍길동</h1>
-            <div class="text-2xl md:text-3xl mb-6 typing-effect">웹 개발자 & UI/UX 디자이너</div>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-                사용자 중심의 디자인과 최신 웹 기술을 결합하여 멋진 디지털 경험을 만드는 개발자입니다.
-            </p>
-            <div class="flex justify-center space-x-4">
-                <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
-                    연락하기
-                </a>
-                <a href="#projects" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">
-                    프로젝트 보기
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 소개 섹션 -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">소개</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-center md:text-left">
-                    <h3 class="text-2xl font-semibold mb-4 text-purple-600">안녕하세요!</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        저는 5년 경력의 웹 개발자로, 사용자에게 최고의 경험을 제공하기 위해 끊임없이 노력하고 있습니다.
-                        프론트엔드 개발부터 백엔드 시스템 설계까지 폭넓은 경험을 가지고 있으며,
-                        특히 React와 Node.js를 활용한 현대적인 웹 애플리케이션 개발에 강점이 있습니다.
+                    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6 leading-tight">
+                        가치를 증명하는 <span class="text-blue-600">수의사</span>,<br>차가운 이성으로 진단합니다.
+                    </h1>
+                    <p class="max-w-2xl text-gray-500 leading-relaxed text-lg mb-4">
+                        분석적 사고를 즐기고, 극한의 상황에서도 냉정함을 잃지 않는 실력 있는 수의사입니다.
                     </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        최근에는 클라우드 기반의 확장 가능한 아키텍처 설계와 마이크로서비스 패턴에 깊이를 더하고 있으며,
-                        지속적인 학습을 통해 최신 기술 트렌드를 따라가고 있습니다.
+                    <div class="flex justify-center space-x-4">
+                        <a href="#contact" class="bg-blue-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-900 transition-all">
+                            상담 예약
+                        </a>
+                        <a href="#clinical" class="border-2 border-blue-800 text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-blue-800 hover:text-white transition-all">
+                            임상 경험 보기
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Three Strengths Grid -->
+                <div class="grid md:grid-cols-3 gap-8 border-t pt-16">
+                    <div class="space-y-3">
+                        <div class="text-blue-600 font-bold text-sm tracking-tighter uppercase">01. 분석적 사고</div>
+                        <h3 class="text-xl font-bold">Analytical Thinking</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">자산 관리와 서사 분석의 경험을 진단 플랜 설계의 논리성으로 연결합니다.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="text-blue-600 font-bold text-sm tracking-tighter uppercase">02. 극한 평정심</div>
+                        <h3 class="text-xl font-bold">Extreme Calmness</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">수심 30m 프리다이빙으로 단련된 멘탈로 어떤 상황에서도 최상의 판단을 내립니다.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="text-blue-600 font-bold text-sm tracking-tighter uppercase">03. 임상 전문성</div>
+                        <h3 class="text-xl font-bold">Clinical Excellence</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">500건 이상의 임상 케이스와 150건 이상의 수술 경험으로 신뢰를 증명합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Identity 섹션 -->
+        <section id="identity" class="scroll-mt-24">
+            <div class="mb-8">
+                <span class="text-xs font-bold tracking-widest text-orange-400 uppercase border-b-2 border-orange-400 pb-1">Concept 02</span>
+                <h2 class="text-2xl font-bold mt-4">감성 & 스토리텔링 (Soft & Narrative)</h2>
+            </div>
+            
+            <div class="bg-[#faf7f2] rounded-[3rem] p-12 md:p-20 overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <h1 class="serif text-3xl md:text-4xl font-bold mb-6 leading-snug">
+                            작은 체구 속 <br>
+                            <span class="relative inline-block">
+                                단단한 멘탈
+                                <span class="absolute bottom-1 left-0 w-full h-3 bg-orange-200/50 -z-10"></span>
+                            </span>을 지닌 사람
+                        </h1>
+                        <p class="text-gray-600 leading-relaxed text-lg serif mb-6">
+                            159cm의 작은 체구지만 프리다이빙으로 단련된 강한 멘탈을 가진 수의사입니다.
+                            부드러운 외면 뒤에 숨겨진 기민함과 집중력으로 어떤 상황에서도 최상의 진단을 제공합니다.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="relative w-48 h-48">
+                            <div class="absolute inset-0 bg-orange-200 rounded-full animate-pulse blur-xl opacity-50"></div>
+                            <div class="relative z-10 w-full h-full bg-gray-300 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                                <i class="fas fa-user-md text-5xl text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strength Badges -->
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="bg-white/80 backdrop-blur shadow-sm px-8 py-6 rounded-2xl text-center flex-1 min-w-[200px] strength-card transition-all">
+                        <div class="text-2xl mb-2">🌊</div>
+                        <h4 class="font-bold mb-2">극한 평정심</h4>
+                        <p class="text-sm text-gray-500 serif italic">수심 30m 아래에서 유지하는 평정심으로 수술실의 집중력을 완성합니다.</p>
+                    </div>
+                    <div class="bg-white/80 backdrop-blur shadow-sm px-8 py-6 rounded-2xl text-center flex-1 min-w-[200px] strength-card transition-all">
+                        <div class="text-2xl mb-2">🎯</div>
+                        <h4 class="font-bold mb-2">기민한 관찰력</h4>
+                        <p class="text-sm text-gray-500 serif italic">환자의 가장 작은 변화도 놓치지 않는 섬세한 관찰력을 바탕으로 합니다.</p>
+                    </div>
+                    <div class="bg-white/80 backdrop-blur shadow-sm px-8 py-6 rounded-2xl text-center flex-1 min-w-[200px] strength-card transition-all">
+                        <div class="text-2xl mb-2">💪</div>
+                        <h4 class="font-bold mb-2">내면의 강함</h4>
+                        <p class="text-sm text-gray-500 serif italic">외과 수술의 정밀함과 내과 진단의 깊이를 겸비한 실력을 갖추었습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Clinical Excellence 섹션 -->
+    <section id="clinical" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Clinical Excellence</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">숫자로 증명하는 전문성</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        500건 이상의 임상 케이스와 150건 이상의 수술 어시스트 경험을 통해 쌓은 신뢰
+                        내과, 외과, 영상 진단 분야에서의 논리적 분석 능력으로 최상의 의료 서비스 제공
                     </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="text-center p-4 bg-purple-50 rounded-lg">
-                            <div class="text-3xl font-bold text-purple-600">50+</div>
-                            <div class="text-gray-600">완료 프로젝트</div>
-                        </div>
-                        <div class="text-center p-4 bg-purple-50 rounded-lg">
-                            <div class="text-3xl font-bold text-purple-600">5년</div>
-                            <div class="text-gray-600">개발 경력</div>
-                        </div>
-                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="card-hover bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-code text-4xl text-purple-600 mb-3"></i>
-                        <h4 class="font-semibold mb-2">클린 코드</h4>
-                        <p class="text-sm text-gray-600">가독성 높은 코드 작성</p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="card-hover bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl font-bold text-blue-800 mb-4">500+</div>
+                        <h4 class="text-xl font-semibold mb-2">임상 케이스</h4>
+                        <p class="text-gray-600">다양한 질환의 진단 및 치료 경험</p>
                     </div>
-                    <div class="card-hover bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-mobile-alt text-4xl text-purple-600 mb-3"></i>
-                        <h4 class="font-semibold mb-2">반응형 디자인</h4>
-                        <p class="text-sm text-gray-600">모든 기기 최적화</p>
+                    <div class="card-hover bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl font-bold text-blue-800 mb-4">150+</div>
+                        <h4 class="text-xl font-semibold mb-2">수술 어시스트</h4>
+                        <p class="text-gray-600">정교한 외과 수술 지원 경험</p>
                     </div>
-                    <div class="card-hover bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-tachometer-alt text-4xl text-purple-600 mb-3"></i>
-                        <h4 class="font-semibold mb-2">성능 최적화</h4>
-                        <p class="text-sm text-gray-600">빠른 로딩 속도</p>
-                    </div>
-                    <div class="card-hover bg-gray-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-users text-4xl text-purple-600 mb-3"></i>
-                        <h4 class="font-semibold mb-2">팀워크</h4>
-                        <p class="text-sm text-gray-600">효과적인 협업</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 기술 스택 섹션 -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">기술 스택</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <i class="fab fa-html5 text-3xl text-orange-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">프론트엔드</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">HTML/CSS</span>
-                                <span class="text-sm">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">JavaScript</span>
-                                <span class="text-sm">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-yellow-500 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">React</span>
-                                <span class="text-sm">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
+                    <div class="card-hover bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl font-bold text-blue-800 mb-4">100%</div>
+                        <h4 class="text-xl font-semibold mb-2">성공률</h4>
+                        <p class="text-gray-600">꼼꼼한 사전 검진으로 높은 치료 성과</p>
                     </div>
                 </div>
 
-                <div class="card-hover bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <i class="fab fa-node-js text-3xl text-green-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">백엔드</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-stethoscope text-3xl text-blue-800 mr-3"></i>
+                            <h3 class="text-xl font-semibold">내과 진단</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">소화기계 질환</span>
+                                    <span class="text-sm">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">호흡기계 질환</span>
+                                    <span class="text-sm">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">심혈관계 질환</span>
+                                    <span class="text-sm">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-blue-400 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Node.js</span>
-                                <span class="text-sm">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-green-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Python</span>
-                                <span class="text-sm">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">MongoDB</span>
-                                <span class="text-sm">75%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-green-600 h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="card-hover bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-tools text-3xl text-purple-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">도구 및 기타</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Git</span>
-                                <span class="text-sm">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-x-ray text-3xl text-blue-800 mr-3"></i>
+                            <h3 class="text-xl font-semibold">영상 진단</h3>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Docker</span>
-                                <span class="text-sm">70%</span>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">X-ray 판독</span>
+                                    <span class="text-sm">98%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 98%"></div>
+                                </div>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-blue-400 h-2 rounded-full" style="width: 70%"></div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">초음파 검사</span>
+                                    <span class="text-sm">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-indigo-500 h-2 rounded-full" style="width: 92%"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">AWS</span>
-                                <span class="text-sm">75%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="skill-bar bg-orange-600 h-2 rounded-full" style="width: 75%"></div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">CT/MRI 판독</span>
+                                    <span class="text-sm">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar bg-indigo-400 h-2 rounded-full" style="width: 88%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -282,82 +329,168 @@
         </div>
     </section>
 
-    <!-- 프로젝트 섹션 -->
-    <section id="projects" class="py-20 bg-white">
+    <!-- Mindset 섹션 -->
+        <section id="mindset" class="scroll-mt-24 pb-20">
+            <div class="mb-8">
+                <span class="text-xs font-bold tracking-widest text-lime-400 uppercase border-b-2 border-lime-400 pb-1">Concept 03</span>
+                <h2 class="text-2xl font-bold mt-4">임팩트 & 자신감 (Bold & Creative)</h2>
+            </div>
+            
+            <div class="bg-black text-white rounded-3xl p-12 md:p-24 overflow-hidden relative">
+                <div class="relative z-10 flex flex-col md:flex-row gap-16">
+                    <div class="md:w-1/2">
+                        <h1 class="text-5xl md:text-7xl font-black italic tracking-tighter mb-8 leading-none">
+                            NO <span class="text-gray-600">LIMITS</span>,<br>
+                            YES <span class="text-lime-400">CALM</span>.
+                        </h1>
+                        <p class="text-gray-400 text-lg mb-12">수심 30m 아래의 평정심으로 수술실과 응급 상황에서 최상의 판단을 내립니다.</p>
+                        <a href="#contact" class="border-2 border-white px-8 py-3 font-bold hover:bg-white hover:text-black transition-all">LET'S CONNECT</a>
+                    </div>
+
+                    <div class="md:w-1/2 space-y-6">
+                        <!-- Impact Strength Blocks -->
+                        <div class="group bg-zinc-900 p-8 border-l-4 border-lime-400 hover:bg-zinc-800 transition-all">
+                            <h3 class="text-2xl font-black mb-2 group-hover:text-lime-400 transition-colors">DEPTH 30M</h3>
+                            <p class="text-sm text-zinc-400">극한의 압력 속에서 유지하는 평정심으로 수술실의 완벽함을 구현</p>
+                        </div>
+                        <div class="group bg-zinc-900 p-8 border-l-4 border-lime-400 hover:bg-zinc-800 transition-all">
+                            <h3 class="text-2xl font-black mb-2 group-hover:text-lime-400 transition-colors">2:30 STATIC</h3>
+                            <p class="text-sm text-zinc-400">2분 30초 무호흡 훈련으로 기른 집중력으로 응급 상황 완벽 대처</p>
+                        </div>
+                        <div class="group bg-zinc-900 p-8 border-l-4 border-lime-400 hover:bg-zinc-800 transition-all">
+                            <h3 class="text-2xl font-black mb-2 group-hover:text-lime-400 transition-colors">PRESSURE</h3>
+                            <p class="text-sm text-zinc-400">깊은 바다 속 고독과 압력을 이겨낸 정신적 강인함으로 어떤 상황에서도 냉정함 유지</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Analytical Insight 섹션 -->
+    <section id="insight" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">프로젝트</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-shopping-cart text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">이커머스 플랫폼</h3>
-                        <p class="text-gray-600 mb-4">
-                            React와 Node.js를 활용한 전자상거래 플랫폼 개발. 실시간 재고 관리와 결제 시스템 구현.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Node.js</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">MongoDB</span>
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Analytical Insight</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">분석적 사고의 즐거움</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        자산 관리의 꼼꼼함을 진료 플랜 설계의 논리성으로, 세계관 분석의 섬세함을 환자 서사 읽기의 능력으로 연결
+                        분석적 사고를 즐기는 마음이 최고의 진단 능력으로 이어집니다
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-chart-line text-3xl text-blue-800 mr-3"></i>
+                            <h4 class="text-xl font-semibold">자산 관리 → 진료 플랜 설계</h4>
                         </div>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800">
-                                <i class="fas fa-external-link-alt"></i> 데모
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800">
-                                <i class="fab fa-github"></i> 코드
-                            </a>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-search text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold mb-2">ISA/IRP 계좌 운용 경험</h5>
+                                    <p class="text-gray-600 text-sm">
+                                        세제 혜택을 극대화하는 자산 배치 전략을 환자의 상태와 보호자의 상황에 맞는
+                                        최적의 진료 플랜 설계로 응용
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-calculator text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold mb-2">위험 관리 능력</h5>
+                                    <p class="text-gray-600 text-sm">
+                                        투자의 위험을 분산하고 수익을 극대화하는 전략을
+                                        질병의 위험 요소 파악과 예방적 치료 계획 수립에 적용
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-balance-scale text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold mb-2">비용-효과 분석</h5>
+                                    <p class="text-gray-600 text-sm">
+                                        투자 수익률을 계산하는 꼼꼼함으로 치료 비용과 예상 효과를 정밀하게 분석하여
+                                        보호자에게 최적의 선택지 제시
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-film text-3xl text-blue-800 mr-3"></i>
+                            <h4 class="text-xl font-semibold">세계관 분석 → 환자 서사 읽기</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-book text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold mb-2">영화/웹툰 분석 취미</h5>
+                                    <p class="text-gray-600 text-sm">
+                                        복잡한 스토리의 구조와 캐릭터의 동기를 파악하는 능력을
+                                        환자의 행동 패턴과 보호자의 숨겨진 요구사항 발견에 활용
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-eye text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold mb-2">관찰력과 통찰력</h5>
+                                    <p class="text-gray-600 text-sm">
+                                        작품의 상징과 은유를 해석하는 섬세함으로
+                                        환자의 비언어적 신호와 미묘한 변화를 포착
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <i class="fas fa-comments text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold mb-2">공감적 소통</h5>
+                                    <p class="text-gray-600 text-sm">
+                                        캐릭터의 입장에서 이야기를 이해하는 능력으로
+                                        보호자의 감정과 상황에 깊이 공감하며 신뢰 관계 형성
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-600 flex items-center justify-center">
-                        <i class="fas fa-tasks text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">프로젝트 관리 도구</h3>
-                        <p class="text-gray-600 mb-4">
-                            팀 협업을 위한 프로젝트 관리 애플리케이션. 칸반 보드와 실시간 채팅 기능 구현.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Vue.js</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Express</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">Socket.io</span>
+                <div class="mt-12 bg-gradient-to-r from-blue-800 to-indigo-800 p-8 rounded-lg text-white text-center">
+                    <h4 class="text-2xl font-bold mb-4">독보적인 수의사 캐릭터</h4>
+                    <p class="text-lg mb-4">
+                        "분석적 사고를 즐기고, 극한의 상황에서도 냉정함을 잃지 않는 실력 있는 수의사"
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <i class="fas fa-brain text-3xl mb-2"></i>
+                            <h5 class="font-semibold mb-1">분석적 사고</h5>
+                            <p class="text-sm opacity-90">재테크/서사 분석 능력</p>
                         </div>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800">
-                                <i class="fas fa-external-link-alt"></i> 데모
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800">
-                                <i class="fab fa-github"></i> 코드
-                            </a>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <i class="fas fa-water text-3xl mb-2"></i>
+                            <h5 class="font-semibold mb-1">극한 평정심</h5>
+                            <p class="text-sm opacity-90">프리다이빙 단련 멘탈</p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">데이터 분석 대시보드</h3>
-                        <p class="text-gray-600 mb-4">
-                            실시간 데이터 시각화 대시보드. 다양한 차트와 그래프로 데이터 인사이트 제공.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">D3.js</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">PostgreSQL</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-blue-600 hover:text-blue-800">
-                                <i class="fas fa-external-link-alt"></i> 데모
-                            </a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800">
-                                <i class="fab fa-github"></i> 코드
-                            </a>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <i class="fas fa-stethoscope text-3xl mb-2"></i>
+                            <h5 class="font-semibold mb-1">임상 전문성</h5>
+                            <p class="text-sm opacity-90">500+ 케이스 경험</p>
                         </div>
                     </div>
                 </div>
@@ -372,18 +505,18 @@
             <div class="max-w-4xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-purple-600">연락 정보</h3>
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-800">연락 정보</h3>
                         <div class="space-y-4">
                             <div class="flex items-center">
-                                <i class="fas fa-envelope text-purple-600 text-xl w-8"></i>
+                                <i class="fas fa-envelope text-blue-800 text-xl w-8"></i>
                                 <span class="ml-3 text-gray-700">honggildong@example.com</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-phone text-purple-600 text-xl w-8"></i>
+                                <i class="fas fa-phone text-blue-800 text-xl w-8"></i>
                                 <span class="ml-3 text-gray-700">+82 10-1234-5678</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-purple-600 text-xl w-8"></i>
+                                <i class="fas fa-map-marker-alt text-blue-800 text-xl w-8"></i>
                                 <span class="ml-3 text-gray-700">서울특별시 강남구</span>
                             </div>
                         </div>
@@ -391,7 +524,7 @@
                         <div class="mt-8">
                             <h4 class="text-lg font-semibold mb-4">소셜 미디어</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                <a href="#" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-blue-900 transition">
                                     <i class="fab fa-github"></i>
                                 </a>
                                 <a href="#" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition">
@@ -400,7 +533,7 @@
                                 <a href="#" class="w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition">
+                                <a href="#" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
@@ -408,22 +541,22 @@
                     </div>
                     
                     <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-purple-600">메시지 보내기</h3>
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-800">상담 예약</h3>
                         <form id="contact-form" class="space-y-4">
                             <div>
                                 <label class="block text-gray-700 mb-2">이름</label>
-                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" required>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
                             </div>
                             <div>
                                 <label class="block text-gray-700 mb-2">이메일</label>
-                                <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" required>
+                                <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
                             </div>
                             <div>
                                 <label class="block text-gray-700 mb-2">메시지</label>
-                                <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" required></textarea>
+                                <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
-                                메시지 보내기
+                            <button type="submit" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition">
+                                상담 신청하기
                             </button>
                         </form>
                     </div>
@@ -432,12 +565,12 @@
         </div>
     </section>
 
+    </main>
+
     <!-- 푸터 -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 홍길동. All rights reserved.</p>
-            <p class="mt-2 text-gray-400">Made with <i class="fas fa-heart text-red-500"></i> and lots of <i class="fas fa-coffee text-brown-500"></i></p>
-        </div>
+    <footer class="bg-white border-t py-12 text-center text-gray-400 text-sm">
+        <p>&copy; 2024 수의사 포트폴리오. All rights reserved.</p>
+        <p class="mt-2 text-gray-400">차가운 이성으로 진단하고, 단단한 평정심으로 치료합니다</p>
     </footer>
 
     <script>
@@ -496,9 +629,9 @@
             });
         }, observerOptions);
 
-        const skillsSection = document.querySelector('#skills');
-        if (skillsSection) {
-            observer.observe(skillsSection);
+        const clinicalSection = document.querySelector('#clinical');
+        if (clinicalSection) {
+            observer.observe(clinicalSection);
         }
 
         // 폼 제출 처리
@@ -511,8 +644,8 @@
             
             // 성공 메시지 표시
             const successMessage = document.createElement('div');
-            successMessage.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-            successMessage.textContent = `${name}님, 메시지가 성공적으로 전송되었습니다!`;
+            successMessage.className = 'fixed top-20 right-4 bg-blue-800 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            successMessage.textContent = `${name}님, 상담 신청이 성공적으로 접수되었습니다!`;
             document.body.appendChild(successMessage);
             
             // 3초 후 메시지 제거
